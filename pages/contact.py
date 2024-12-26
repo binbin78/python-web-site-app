@@ -1,9 +1,12 @@
 import streamlit as st
 from send_email import send_email
+import os
 
 st.set_page_config(layout="wide")
 
 st.header("Contact Us")
+
+st.write(os.getenv("PASSWORD"))
 
 with st.form(key="contact_form"):
     user_email=st.text_input("Your email address")
